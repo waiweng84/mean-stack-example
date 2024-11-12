@@ -11,8 +11,9 @@
     "prepare:server": "cd server && npm install",
     "prepare:client": "cd client && npm install",
     "build": "npm run prepare && concurrently \"npm run build:server\" \"npm run build:client\"",
-    "build:server": "cd server && npm run build",
-    "build:client": "cd client && npm run build",
+    "build:client": "cd client && ng build",
+    "build:server": "cd server && tsc",
+    "build": "npm run build:client && npm run build:server",
     "test": "npm run prepare && concurrently \"npm run test:client\" \"npm run test:server\"",
     "test:client": "cd client && npm test",
     "test:server": "cd server && npm test"
