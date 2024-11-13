@@ -3,6 +3,9 @@ FROM node:18-slim AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 
+# Install Angular CLI and TypeScript globally
+RUN npm install -g @angular/cli typescript
+
 # Install dependencies and copy them to the container
 RUN npm install
 COPY . .
